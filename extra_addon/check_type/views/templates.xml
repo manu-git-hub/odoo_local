@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <!-- Inherit the hr.employee form view -->
+        <record id="view_employee_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="job_title" position="after">
+                <td>
+                        <div class="oe_title">Attendance Status : 
+                        <field name="attendance_status" readonly="1" string="Attendance Status :"/>
+                        </div>
+                    </td>           
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

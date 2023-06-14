@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_employee_form_inherit">
+            <field name="name">hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//page[@name='public']" position="after">
+                    <page string="Goals">
+                        <tr>
+                            <td colspan="2" style="width: 100%;">
+                                <div class="o_horizontal_separator">Company Goal </div>
+                            </td>
+                        </tr>
+                            <field name="company_goal"/>
+                            <tr>
+                            <td colspan="2" style="width: 100%;">
+                                <div class="o_horizontal_separator">Employee Goal </div>
+                            </td>
+                        </tr>
+                            <field name="employee_goal"/> 
+                        </page>
+                        
+                    </xpath>
+                </data>
+            </field> 
+        </record>
+    </data>
+</odoo>

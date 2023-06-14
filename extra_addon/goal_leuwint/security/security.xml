@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <!-- Group Definition -->
+        <record id="group_employee_manager" model="res.groups">
+            <field name="name">Employee Manager</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Control List (ACL) -->
+        <record id="access_hr_employee" model="ir.model.access">
+            <field name="name">HR Employee Access</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="group_id" ref="group_employee_manager"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <!-- Access Control List (ACL) for hr.employee Kiosk Attendance -->
+        <record id="access_hr_employee_kiosk" model="ir.model.access">
+            <field name="name">HR Employee Kiosk Access</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="group_id" ref="group_employee_manager"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+    </data>
+</odoo>

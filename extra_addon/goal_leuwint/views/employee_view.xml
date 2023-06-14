@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <!-- Inherit the existing form view -->
+        <record model="ir.ui.view" id="view_employee_form_inherit">
+            <field name="name">employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <!-- Add the company_goal and employee_goal fields after work_location_id -->
+                <xpath expr="//field[@name='work_location_id']" position="after">
+                    <field name="company_goal"/>
+                    <field name="employee_goal"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_employee_public_form_inherit">
+    <field name="name">hr.employee.public.form.inherit</field>
+    <field name="model">hr.employee.public</field>
+    <field name="inherit_id" ref="hr.hr_employee_public_view_form" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='work_location_id']" position="after">
+            <field name="company_goal"/>
+            <field name="employee_goal"/>
+        </xpath>
+    </field>
+</record>
+
+    </data>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_goal_public_goal_public,goal_public.goal_public,model_goal_public_goal_public,base.group_user,1,1,1,1

@@ -1,0 +1,32 @@
+<!-- <odoo>
+    <data>
+        <record model="ir.ui.view" id="view_employee_kiosk_form_inherit">
+            <field name="name">employee.kiosk.form.inherit</field>
+            <field name="model">hr.employe</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <field name="work_location_id" position="after">
+                    <field name="company_goal"/>
+                    <field name="employee_goal"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo> -->
+<odoo>
+    <data>
+        <!-- Modify the access rights for the company_goal and employee_goal fields -->
+        <record id="access_hr_employee_kiosk" model="ir.model.access">
+            <field name="name">Access HR Employee Kiosk</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="perm_fields">
+                [('company_goal', '=', True), ('employee_goal', '=', True)]
+            </field>
+        </record>
+    </data>
+</odoo>
