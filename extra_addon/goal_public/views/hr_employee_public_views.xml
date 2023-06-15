@@ -8,27 +8,32 @@
             <field name="arch" type="xml">
                 <!-- Add the company_goal and employee_goal fields after work_location_id -->
                 <xpath expr="//field[@name='work_location_id']" position="after">
-                    <field name="company_goal"/>
-                    <field name="employee_goal"/>
+                    <tr>
+                        <td colspan="2" style="width: 100%;">
+                            <div class="o_horizontal_separator">Goal</div>
+                        </td>
+                    </tr>
+                        <field name="company_goal"/>
+                        <field name="employee_goal"/>
                 </xpath>
             </field>
         </record>
 
-         <!-- Inherit the existing form view -->
         <record model="ir.ui.view" id="view_employee_public_form_inherit">
             <field name="name">hr.employee.public.form.inherit</field>
             <field name="model">hr.employee.public</field>
             <field name="inherit_id" ref="hr.hr_employee_public_view_form" />
             <field name="arch" type="xml">
-                <!-- Add the company_goal and employee_goal fields after work_location_id -->
-                <xpath expr="//form/sheet/notebook/page/field[@name='leave_manager_id']" position="attributes">
-            <attribute name="readonly">1</attribute>
-            </xpath>
                 <xpath expr="//field[@name='work_location_id']" position="after">
-                    <field name="company_goal"/>
-                    <field name="employee_goal"/>
+                    <tr>
+                        <td colspan="2" style="width: 100%;">
+                            <div class="o_horizontal_separator">Goal</div>
+                        </td>
+                    </tr>
+                        <field name="company_goal"/>
+                        <field name="employee_goal"/>
                 </xpath>
             </field>
-        </record>
+        </record>   
     </data>
 </odoo>

@@ -8,9 +8,3 @@ class Employee(models.Model):
                                groups=[])
     employee_goal = fields.Char(string='Employee Goal', store=True,
                                 groups=[])
-
-   
-
-    
-
-    

@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class Employee(models.Model):
     _inherit = 'hr.employee'
 
@@ -7,9 +8,3 @@ class Employee(models.Model):
                                groups=[])
     employee_goal = fields.Char(string='Employee Goal', store=True,
                                 groups=[])
-
-   
-
-    
-
-    
